@@ -5,9 +5,9 @@ import { BsArrowRight } from "react-icons/bs";
 
 import Image from "../../Images/Header.jpg";
 
-const Navbar = () => {
+const Navbar = ({ show }) => {
   return (
-    <section className={styles.header}>
+    <section className={`${show == false ? '' : styles.header}`}>
       <div className={styles.container}>
         <div className={styles.navbar}>
           <div className={styles.logo}>
@@ -33,7 +33,7 @@ const Navbar = () => {
             </ul>
           </nav>
         </div>
-        <div className={styles.row}>
+        {(show === true || show === undefined) ? <div className={styles.row}>
           <div className={styles.content}>
             <h1>Make delicious creations Shop with us!</h1>
             <div href="" className={styles.btn}>
@@ -43,7 +43,7 @@ const Navbar = () => {
             </div>
           </div>
           <img className={styles.logo} src={Image} />
-        </div>
+        </div> : ''}
       </div>
     </section>
   );

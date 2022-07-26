@@ -6,6 +6,7 @@ import ReactLoading from "react-loading";
 import styles from "./Products.module.css";
 
 import { Others, Fruits, Utensils } from "../../ProductList";
+import Navbar from "../../Components/Navbar/Navbar";
 
 const ProductsList = () => {
   const [data, setData] = useState([]);
@@ -25,6 +26,7 @@ const ProductsList = () => {
 
   return (
     <div className={styles.Wrapper}>
+      <Navbar show={false}/>
       <h1>Products</h1>
       {!loading ? (
         <ReactLoading type="bars" color="gray" className={styles.loading} />

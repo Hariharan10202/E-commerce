@@ -4,6 +4,7 @@ import { collection, onSnapshot } from "firebase/firestore";
 import { db } from "../../firebase";
 
 import styles from "./SingleProduct.module.css";
+import Navbar from "../../Components/Navbar/Navbar";
 
 const SingleProduct = () => {
   const [loading, setLoading] = useState(true);
@@ -140,6 +141,7 @@ const SingleProduct = () => {
 
   return (
     <div className={styles.wrapper}>
+      <Navbar show={false} />
       <div className={styles.container}>
         {!loading && (
           <>
