@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
 
 const Navbar = () => {
+  const log = () => {
+    localStorage.removeItem("cred");
+    window.location.href = "/login";
+  }
+
   return (
     <div className={styles.Wrapper}>
       <div className={styles.ManuBar}>
@@ -22,11 +27,9 @@ const Navbar = () => {
             <span>View Product</span>
           </li>
         </Link>
-        <Link to="/login" className="link">
           <div className={styles.submitBtn}>
-            <button>Logout</button>
+            <button onClick={log}>Logout</button>
           </div>
-        </Link>
       </div>
     </div>
   );

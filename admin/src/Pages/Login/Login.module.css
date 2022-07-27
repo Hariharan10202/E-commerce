@@ -18,6 +18,13 @@
   -webkit-transform: translate(-50%, -50%);
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
 .inputField input {
   font-size: 20px;
   font-weight: 600;
@@ -26,7 +33,7 @@
   border: 2px solid gray;
 }
 
-.btn button {
+button {
   padding: 10px 30px;
   border: none;
   background-color: blueviolet;
@@ -35,4 +42,5 @@
   font-weight: 600;
   color: white;
   border-radius: 8px;
+  cursor: pointer;
 }

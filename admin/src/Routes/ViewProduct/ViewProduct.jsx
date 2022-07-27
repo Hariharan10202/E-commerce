@@ -40,6 +40,11 @@ const ViewProduct = () => {
   ];
 
   useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("cred"));
+    if(user === null) {
+      window.location.href = "/login";
+    }
+    
     try {
       const unsub = onSnapshot(collection(db, "products"), (snapShot) => {
         let list = [];

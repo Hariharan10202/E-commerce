@@ -19,6 +19,13 @@ const AddProduct = () => {
   console.log(params);
 
   useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("cred"));
+    if(user === null) {
+      window.location.href = "/login";
+    }
+  }, []);
+
+  useEffect(() => {
     const fetchData = async () => {
       const docRef = doc(db, "products", params);
       const docSnap = await getDoc(docRef);
